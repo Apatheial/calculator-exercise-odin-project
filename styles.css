@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+body, .calculator-body {
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    justify-content: center;
+}
+
+.calculator-body, .display, #btn-clear {
+    border: 1px solid black;
+}
+
+.calculator-body {
+    height: 500px;
+    min-width: 350px;
+    max-width: 350px;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.calculator-display, .calculator-keyboard {
+    width: 90%;
+}
+
+.calculator-display {
+    margin-block: 10px 0px;
+    height: 15%;
+}
+
+.display, #btn-clear {
+    padding-inline: 15px; 
+    font-weight: 900;
+}
+
+.display {
+    width: 80%;
+    font-size: 24px;
+    text-align: end;
+    border-right: none;
+}
+
+#btn-clear {
+    font-size: 14px;
+}
+
+.calculator-keyboard {
+    margin-block: 0px 10px;
+    flex: 1;
+    flex-wrap: wrap;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.calculator-keyboard button {
+    font-size: 26px;
+    font-weight: 600;
+    width: 33.334%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#btn-add, #btn-divide, #btn-subtract, #btn-multiply {
+    width: 25%;
+}
+
+#btn-zero {
+    flex: 1;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
