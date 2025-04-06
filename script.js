@@ -78,6 +78,10 @@ const handleInput = (atualDisplay, input) => {
 }
 
 const handleOperation = (input) => {
+    if (input === "Enter") {
+        input = "=";
+    }
+
     if (isNaN(firstNum)) {
         clearStorage();
     }
@@ -117,8 +121,8 @@ const roundResult = (result) => {
 
     if (resultString.includes(".")) {
         const decimalNumber = resultString.split(".")[1];
-        if (decimalNumber.length > 6) {
-            return parseFloat(result.toFixed(6));
+        if (decimalNumber.length > 8) {
+            return parseFloat(result.toFixed(8));
         }
     }
     return result
@@ -151,7 +155,10 @@ const negNumber = () => {
 
 const percent = () => {
     if (display.textContent !== "0") {
-        display.textContent = Number(display.textContent) / 100;
+        firstNum = Number(display.textContent);
+        secondNum = 100;
+        operator = "/";
+        display.textContent = operate();
     }
 }
 
@@ -186,6 +193,40 @@ calculatorKeyBoard.addEventListener("click", (event) => {
             negNumber();
             break;
         case target.id === "btn-percent":
+            percent();
+            break;
+        default:
+            return;
+    }
+});
+
+const operands = ["0", "1", "2", "3", "4", "5", 
+                  "6", "7", "8", "9", "."];
+
+const operators = ["-", "*", "/", "+", "=", "Enter"];
+
+window.addEventListener("keydown", (event) => {
+    const code = event.code;
+    const key = event.key;
+
+    switch (true) {
+        case operands.includes(key):
+            populateDisplay(key);
+            break;
+        case operators.includes(key):
+            handleOperation(key);
+            break;
+        case code === "Escape":
+            updateDisplay("0");
+            clearStorage();
+            break;
+        case code === "Backspace" || code === "Delete":
+            deleteLast();
+            break;
+        case event.shiftKey && code === "Minus":
+            negNumber();
+            break;
+        case event.shiftKey && code === "Digit5":
             percent();
             break;
         default:
