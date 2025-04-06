@@ -10,25 +10,33 @@
     <body class="flex">
         <section class="calculator-body flex">
             <div class="calculator-display flex">
-                <input class="display" readonly placeholder="8 + 6">
-                <button id="btn-clear">CLEAR</button>
+                <p class="display flex">0</p>
+                <button id="btn-clear">AC</button>
             </div>
-            <div class="calculator-keyboard flex">
-                <button id="btn-divide">/</button>
-                <button id="btn-multiply">*</button>
-                <button id="btn-subtract">-</button>
-                <button id="btn-add">+</button>
-                <button id="btn-nine">9</button>
-                <button id="btn-eigth">8</button>
-                <button id="btn-seven">7</button>
-                <button id="btn-six">6</button>
-                <button id="btn-five">5</button>
-                <button id="btn-four">4</button>
-                <button id="btn-three">3</button>
-                <button id="btn-two">2</button>
-                <button id="btn-one">1</button>
-                <button id="btn-zero">0</button>
-                <button id="btn-equal">=</button>
+            <div id="calculator-keyboard" class="flex">
+                <div class="number-buttons flex">
+                    <button id="btn-del">DEL</button>
+                    <button id="btn-neg">+/-</button>
+                    <button id="btn-percent">%</button>
+                    <button id="btn-seven" class="number">7</button>
+                    <button id="btn-eigth" class="number">8</button>
+                    <button id="btn-nine" class="number">9</button>
+                    <button id="btn-four" class="number">4</button>
+                    <button id="btn-five" class="number">5</button>
+                    <button id="btn-six" class="number">6</button>
+                    <button id="btn-one" class="number">1</button>
+                    <button id="btn-two" class="number">2</button>
+                    <button id="btn-three" class="number">3</button>
+                    <button id="btn-zero" class="number">0</button>
+                    <button id="btn-decimal">.</button>
+                </div>
+                <div class="operator-buttons flex">
+                    <button id="btn-divide" class="operator">/</button>
+                    <button id="btn-multiply" class="operator">*</button>
+                    <button id="btn-subtract" class="operator">-</button>
+                    <button id="btn-add" class="operator">+</button>
+                    <button id="btn-equal">=</button>
+                </div>
             </div>
         </section>
     </body>
