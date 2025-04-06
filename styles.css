@@ -25,6 +25,7 @@ body {
 .calculator-body {
     height: 500px;
     min-width: 350px;
+    width: 350px;
     flex-direction: column;
     justify-content: space-around;
     gap: 10px;
